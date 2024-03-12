@@ -1,0 +1,17 @@
+sub.o: sub.cpp
+	g++ -c sub.cpp
+
+soma.o: soma.cpp
+	g++ -c soma.cpp
+
+div.o: div.cpp
+	g++ -c div.cpp
+
+mult.o: mult.cpp
+	g++ -c mult.cpp
+
+main.o: main.cpp sub.o soma.o div.o mult.o
+	g++ -c main.o sub.o soma.o div.o mult.o -o main
+
+limpar:
+	rm *.o main
